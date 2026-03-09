@@ -1,0 +1,13 @@
+query GetUser($userId: ID!) {
+  getUser(userId: $userId) {
+    id
+    email
+    status
+  }
+}
+
+query ListUsers($limit: Int) {
+  listUsers(limit: $limit) {
+    nextCursor
+  }
+}

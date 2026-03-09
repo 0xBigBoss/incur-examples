@@ -1,0 +1,36 @@
+{
+  "name": "incur-examples",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "type": "module",
+  "scripts": {
+    "build": "bun run --filter './packages/*' build && bun run --filter './apps/*' build",
+    "typecheck": "tsgo -b",
+    "lint": "oxlint .",
+    "lint:fix": "oxlint --fix .",
+    "format": "oxfmt --write .",
+    "format:check": "oxfmt --check .",
+    "check": "bun run typecheck && bun run lint && bun run format:check",
+    "test": "bun test",
+    "smoke": "bun test apps/acme-cli/src/smoke.test.ts",
+    "vendor:incur": "bun scripts/vendor-incur.ts",
+    "connectrpc:server": "bun run --filter @incur-examples/connectrpc-example start",
+    "graphql:server": "bun run --filter @incur-examples/graphql-example start",
+    "cli": "bun run --filter @incur-examples/acme-cli start",
+    "linear": "bun run --filter @incur-examples/linear-cli start",
+    "linear:schema": "bun scripts/fetch-linear-schema.ts && bun scripts/trim-linear-schema.ts"
+  },
+  "devDependencies": {
+    "@types/bun": "^1.3.3",
+    "@types/node": "^24.5.2",
+    "@typescript/native-preview": "^7.0.0-dev.20260215.1",
+    "jscpd": "^4.0.8",
+    "knip": "^5.83.1",
+    "oxfmt": "^0.27.0",
+    "oxlint": "^1.47.0",
+    "typescript": "^5.9.3"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "name": "@incur-examples/linear-cli",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "bun build --compile src/index.ts --outfile linear",
+    "start": "bun src/index.ts"
+  },
+  "dependencies": {
+    "incur": "file:../../vendor/incur-0.3.0-d8c8b22.tgz"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "name": "@incur-examples/graphql-example",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "build": "echo 'no build step'",
+    "start": "bun src/server.main.ts"
+  },
+  "dependencies": {
+    "graphql": "^16.13.1"
+  }
+}
